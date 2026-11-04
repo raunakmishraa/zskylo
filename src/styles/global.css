@@ -241,3 +241,72 @@ nav { display: flex; gap: 34px; align-items: center; }
   .portfolio-art-title { font-size: 42px; }
   .product-division-list > * { grid-template-columns: 120px 1fr; }
 }
+
+
+/* Quiet, purposeful motion */
+@keyframes zskylo-rise-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-copy {
+  animation: zskylo-rise-in .7s cubic-bezier(.2,.7,.2,1) both;
+}
+.hero-visual {
+  animation: zskylo-rise-in .85s cubic-bezier(.2,.7,.2,1) .08s both;
+}
+.page-hero {
+  animation: zskylo-rise-in .65s cubic-bezier(.2,.7,.2,1) both;
+}
+.nav-link {
+  position: relative;
+  transition: color .2s ease;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform .22s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+.division-card {
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.division-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59,89,152,.32);
+  box-shadow: 0 14px 34px rgba(29,43,66,.07);
+}
+.portfolio-visual .portfolio-art {
+  transition: transform .35s cubic-bezier(.2,.7,.2,1);
+}
+.portfolio-visual:hover .portfolio-art {
+  transform: scale(1.012);
+}
+.text-link span,
+.project-link span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.text-link:hover span,
+.project-link:hover span {
+  transform: translate(3px, -2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-copy,
+  .hero-visual,
+  .page-hero {
+    animation: none !important;
+  }
+  .nav-link::after {
+    transition: none !important;
+  }
+}

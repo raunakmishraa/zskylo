@@ -1,0 +1,25 @@
+name: Website checks
+
+on:
+  push:
+    branches: ["main", "feat/zskylo-website-redesign"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Astro type and content checks
+        run: npm run check
+      - name: Build website
+        run: npm run build

@@ -1,0 +1,65 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+const divisions = [
+  { number: "01", title: "Software Development", text: "Websites, commerce experiences, CRM systems and practical digital tools shaped around the way a business works.", href: "/services/#software", tag: "Build useful systems" },
+  { number: "02", title: "Brand Growth", text: "Creative production and digital marketing support, from editing and scripting to campaigns and delivery.", href: "/services/#growth", tag: "Create with intention" },
+  { number: "03", title: "Our Products", text: "Digital products developed to solve focused problems and make everyday experiences more useful.", href: "/products/", tag: "Ideas made useful" },
+];
+---
+<SiteLayout title="Zskylo — Clear thinking. Useful digital work." description="Zskylo brings together software development, brand growth and digital products.">
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="eyebrow-line"></span> Digital studio · Nepal</p>
+      <h1>Make digital<br /><span class="text-blue">work better.</span></h1>
+      <p class="hero-intro">We build useful digital experiences, help brands communicate with clarity, and create products designed around real needs.</p>
+      <div class="hero-actions">
+        <a class="button" href="/contact/">Start a conversation <span aria-hidden="true">↗</span></a>
+        <a class="text-link" href="/work/">Explore our work <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Abstract modular network illustration" role="img">
+      <div class="visual-top"><span>ZS / 001</span><span>Connected by design</span></div>
+      <div class="network">
+        <span class="node node-a"></span><span class="node node-b"></span><span class="node node-c"></span><span class="node node-d"></span>
+        <span class="network-line line-a"></span><span class="network-line line-b"></span><span class="network-line line-c"></span><span class="network-line line-d"></span>
+        <span class="network-core">Z</span>
+      </div>
+      <div class="visual-bottom"><span>THOUGHTFUL DIGITAL WORK</span><span>27°39′ N / 85°19′ E</span></div>
+    </div>
+    <div class="hero-index"><span>01</span><span class="index-rule"></span><span>03</span></div>
+  </section>
+
+  <section class="intro-band">
+    <div class="wrap intro-grid">
+      <p class="eyebrow">A considered approach</p>
+      <p class="intro-statement">Good digital work is more than a finished screen. It should make something <span class="text-blue">clearer, easier,</span> or more useful.</p>
+    </div>
+  </section>
+
+  <section class="section wrap">
+    <div class="section-heading">
+      <div><p class="eyebrow">What we do</p><h2>Three ways to<br />move things forward.</h2></div>
+      <p class="section-aside">Different disciplines, one considered approach: understand the need, make the right thing, and deliver it with care.</p>
+    </div>
+    <div class="division-list">
+      {divisions.map((item) => <a class="division-row" href={item.href}>
+        <span class="division-number">{item.number}</span>
+        <div class="division-main"><span class="eyebrow">{item.tag}</span><h3>{item.title}</h3><p>{item.text}</p></div>
+        <span class="round-arrow" aria-hidden="true">↗</span>
+      </a>)}
+    </div>
+  </section>
+
+  <section class="work-preview">
+    <div class="wrap preview-inner">
+      <div><p class="eyebrow eyebrow-light">Selected software projects</p><h2>Work made for<br />real-world needs.</h2></div>
+      <div><p class="preview-copy">From commerce platforms to education and consultancy websites, explore a selection of digital work.</p><a class="button button-light" href="/work/">View software work <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="wrap preview-foot"><span>SOFTWARE DEVELOPMENT</span><span>SELECTED PROJECTS / 06</span></div>
+  </section>
+
+  <section class="section wrap closing-section">
+    <p class="eyebrow">Have something in mind?</p>
+    <div class="closing-row"><h2>Let’s make it<br /><span class="text-blue">work for you.</span></h2><a class="button" href="/contact/">Talk to Zskylo <span aria-hidden="true">↗</span></a></div>
+  </section>
+</SiteLayout>

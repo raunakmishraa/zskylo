@@ -1,0 +1,26 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+const projects = [
+  { n: "01", name: "Skinociti", type: "Electronics e-commerce · United States", detail: "E-commerce website for a US electronics business.", url: "https://www.skinociti.com/", label: "Visit website" },
+  { n: "02", name: "Rapti Fashion Direct", type: "E-commerce · United States", detail: "E-commerce platform developed in Laravel for a US client.", url: "https://raptifashiondirect.com/", label: "Visit website" },
+  { n: "03", name: "Study Overseas", type: "Education consultancy · Nepal", detail: "Website for an education consultancy in Nepal.", url: "https://www.studyoverseas.edu.np/", label: "Visit website" },
+  { n: "04", name: "Investment Guru 2.0", type: "Education · Nepal", detail: "Website for a share-market training institute, including course enrolment.", url: "https://www.investmentguru.com.np/", label: "Visit website" },
+  { n: "05", name: "Investment Guru v1", type: "Previous website version", detail: "An earlier version of the Investment Guru website.", url: "https://ig-v1.raunakmishra.com.np/", label: "Visit website" },
+  { n: "06", name: "Nexo Global", type: "International consultancy · Australia", detail: "International consultancy website for an Australian client.", url: "https://nexoglobal.netlify.app/", label: "Visit website" },
+];
+---
+<SiteLayout title="Selected Work — Zskylo" description="A selection of websites and e-commerce projects developed by Zskylo.">
+  <section class="page-hero wrap">
+    <p class="eyebrow"><span class="eyebrow-line"></span> Selected work / 06 projects</p>
+    <h1>Built around<br /><span class="text-blue">the brief.</span></h1>
+    <p class="page-lede">A selection of software and website projects across commerce, education and consultancy.</p>
+  </section>
+  <section class="wrap projects-list">
+    {projects.map((project) => <article class="project-row">
+      <span class="project-number">{project.n}</span>
+      <div class="project-info"><span class="eyebrow">{project.type}</span><h2>{project.name}</h2><p>{project.detail}</p></div>
+      <a class="project-link" href={project.url} target="_blank" rel="noopener noreferrer">{project.label} <span aria-hidden="true">↗</span></a>
+    </article>)}
+  </section>
+  <section class="section wrap service-end"><p class="eyebrow">Have a project to discuss?</p><h2>Let’s work on<br /><span class="text-blue">what’s next.</span></h2><a class="button" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></section>
+</SiteLayout>

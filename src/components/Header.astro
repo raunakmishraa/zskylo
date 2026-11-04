@@ -10,7 +10,7 @@ const path = Astro.url.pathname;
 ---
 <header class="site-header">
   <div class="header-inner wrap">
-    <a class="wordmark" href="/" aria-label="Zskylo home"><span class="wordmark-mark">Z</span><span>zskylo</span></a>
+    <a class="wordmark" href="/" aria-label="Zskylo home"><img class="brand-logo" src="/logo.svg" alt="" width="42" height="42" /><span>zskylo</span></a>
     <nav aria-label="Main navigation">
       {links.map((link) => <a class:list={["nav-link", { active: path === link.href }]} href={link.href}>{link.label}</a>)}
     </nav>

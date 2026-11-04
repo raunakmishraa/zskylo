@@ -1,0 +1,22 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+const products = [
+  { n: "01", name: "AashrayaCare", category: "Care discovery platform", description: "A platform for families to discover caregivers and care homes.", url: "https://aashraya-care.netlify.app/", action: "Explore AashrayaCare", status: "Live" },
+  { n: "02", name: "Yittzy", category: "Town events", description: "An event-listing platform designed to help people discover what’s happening in their town.", url: "", action: "", status: "Coming soon" },
+  { n: "03", name: "Cashify Wallet", category: "Fintech product", description: "A digital presence for the Cashify Wallet product.", url: "https://cashifywallet.com/", action: "Visit website", status: "Live" },
+];
+---
+<SiteLayout title="Our Products — Zskylo" description="Digital products developed by Zskylo.">
+  <section class="page-hero wrap">
+    <p class="eyebrow"><span class="eyebrow-line"></span> Our products / 03</p>
+    <h1>Ideas shaped<br />into <span class="text-blue">useful tools.</span></h1>
+    <p class="page-lede">Products built around focused needs, with room to grow as those needs evolve.</p>
+  </section>
+  <section class="wrap products-list">
+    {products.map((product) => <article class="product-row">
+      <span class="project-number">{product.n}</span>
+      <div class="product-info"><span class="eyebrow">{product.category}</span><h2>{product.name}</h2><p>{product.description}</p></div>
+      <div class="product-action">{product.url ? <a class="text-link" href={product.url} target="_blank" rel="noopener noreferrer">{product.action} <span aria-hidden="true">↗</span></a> : <span class="coming-label"><span class="status-dot"></span>{product.status}</span>}</div>
+    </article>)}
+  </section>
+</SiteLayout>

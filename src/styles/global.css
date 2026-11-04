@@ -285,15 +285,11 @@ nav { display: flex; gap: 34px; align-items: center; }
   border-color: rgba(59,89,152,.32);
   box-shadow: 0 14px 34px rgba(29,43,66,.07);
 }
-.portfolio-visual .portfolio-art,
-.portfolio-visual .portfolio-art-shape {
+.portfolio-visual .portfolio-art {
   transition: transform .35s cubic-bezier(.2,.7,.2,1);
 }
 .portfolio-visual:hover .portfolio-art {
   transform: scale(1.012);
-}
-.portfolio-visual:hover .portfolio-art-shape {
-  transform: scale(1.06);
 }
 .text-link span,
 .project-link span {

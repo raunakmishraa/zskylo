@@ -2,7 +2,6 @@ name: Website checks
 
 on:
   push:
-    branches: ["main", "feat/zskylo-website-redesign"]
   pull_request:
     branches: ["main"]
 

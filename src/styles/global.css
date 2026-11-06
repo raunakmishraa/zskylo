@@ -710,3 +710,16 @@ nav { display: flex; gap: 34px; align-items: center; }
   .inquiry-submit-row > p { max-width: 100%; }
   .inquiry-aside { padding: 22px; }
 }
+
+
+/* Progressive reveal and mobile menu stacking */
+.js-reveal { opacity: 0; transform: translateY(32px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1); }
+.js-reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 800px) {
+  .header-inner { position: relative; z-index: 2; }
+  .site-header:has(.menu-toggle[aria-expanded="true"]) { background: transparent; border-color: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .mobile-navigation { z-index: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal, .js-reveal.is-visible { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

@@ -25,6 +25,22 @@ const {
     <meta property="og:description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zskylo",
+        "url": "https://zskylo.com/",
+        "description": "Software development, brand growth and independent digital products from Zskylo, Nepal.",
+        "email": "hello@zskylo.com",
+        "telephone": "+977 9761165180",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Imadol, Lalitpur",
+          "addressCountry": "NP"
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />

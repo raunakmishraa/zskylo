@@ -19,7 +19,7 @@ const projects = [
     {projects.map((project) => <article class="live-portfolio-card">
       <a class="site-glimpse portfolio-glimpse" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.name} live website`}>
         <span class="glimpse-browser-bar"><span class="glimpse-browser-dots"><i></i><i></i><i></i></span><span>{project.name}</span><b aria-hidden="true">↗</b></span>
-        <iframe src={project.url} title={`${project.name} live website preview`} loading="lazy" tabindex="-1" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        {project.name === "Skinociti" ? <img class="skinociti-static-preview" src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://www.skinociti.com/" alt="Static screenshot preview of the Skinociti website" loading="lazy" /> : <iframe src={project.url} title={`${project.name} live website preview`} loading="lazy" tabindex="-1" referrerpolicy="strict-origin-when-cross-origin"></iframe>}
         <span class="glimpse-open-label">Open live website <b aria-hidden="true">↗</b></span>
       </a>
       <div class="live-portfolio-info">

@@ -1,36 +1,33 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 const projects = [
-  { n: "01", name: "Skinociti", type: "Electronics e-commerce · United States", detail: "E-commerce website for a US electronics business.", url: "https://www.skinociti.com/", visual: "skinociti", visualLabel: "SKINOCITI", visualSub: "ELECTRONICS / ONLINE STORE", visualAccent: "SHOP THE COLLECTION" },
-  { n: "02", name: "Rapti Fashion Direct", type: "E-commerce · United States", detail: "E-commerce platform developed in Laravel for a US client.", url: "https://raptifashiondirect.com/", visual: "rapti", visualLabel: "RAPTI", visualSub: "FASHION / E-COMMERCE", visualAccent: "NEW SEASON" },
-  { n: "03", name: "Study Overseas", type: "Education consultancy · Nepal", detail: "Website for an education consultancy in Nepal.", url: "https://www.studyoverseas.edu.np/", visual: "study", visualLabel: "STUDY\nOVERSEAS", visualSub: "EDUCATION / GUIDANCE", visualAccent: "YOUR NEXT CHAPTER" },
-  { n: "04", name: "Investment Guru 2.0", type: "Education · Nepal", detail: "Website for a share-market training institute, including course enrolment.", url: "https://www.investmentguru.com.np/", visual: "guru", visualLabel: "INVESTMENT\nGURU", visualSub: "LEARN / PRACTICE / GROW", visualAccent: "COURSE ENROLMENT" },
-  { n: "05", name: "Investment Guru v1", type: "Previous website version", detail: "An earlier version of the Investment Guru website.", url: "https://ig-v1.raunakmishra.com.np/", visual: "guru-old", visualLabel: "INVESTMENT\nGURU", visualSub: "PREVIOUS WEBSITE VERSION", visualAccent: "VERSION 01" },
-  { n: "06", name: "Nexo Global", type: "International consultancy · Australia", detail: "International consultancy website for an Australian client.", url: "https://nexoglobal.netlify.app/", visual: "nexo", visualLabel: "NEXO\nGLOBAL", visualSub: "INTERNATIONAL CONSULTANCY", visualAccent: "CONNECTING POSSIBILITIES" },
+  { n: "01", name: "Skinociti", type: "Electronics e-commerce · United States", detail: "E-commerce website for a US electronics business.", url: "https://www.skinociti.com/" },
+  { n: "02", name: "Rapti Fashion Direct", type: "E-commerce · United States", detail: "E-commerce platform developed in Laravel for a US client.", url: "https://raptifashiondirect.com/" },
+  { n: "03", name: "Study Overseas", type: "Education consultancy · Nepal", detail: "Website for an education consultancy in Nepal.", url: "https://www.studyoverseas.edu.np/" },
+  { n: "04", name: "Investment Guru 2.0", type: "Education · Nepal", detail: "Website for a share-market training institute, including course enrolment.", url: "https://www.investmentguru.com.np/" },
+  { n: "05", name: "Investment Guru v1", type: "Previous website version", detail: "An earlier version of the Investment Guru website.", url: "https://ig-v1.raunakmishra.com.np/" },
+  { n: "06", name: "Nexo Global", type: "International consultancy · Australia", detail: "International consultancy website for an Australian client.", url: "https://nexoglobal.netlify.app/" },
 ];
 ---
-<SiteLayout title="Selected Work — Zskylo" description="A visual selection of websites and e-commerce projects developed by Zskylo.">
+<SiteLayout title="Selected Work — Zskylo" description="Live website glimpses of selected software and e-commerce projects developed by Zskylo.">
   <section class="page-hero wrap">
     <p class="eyebrow"><span class="eyebrow-line"></span> Selected work / 06 projects</p>
     <h1>Different briefs.<br /><span class="text-blue">Purposeful builds.</span></h1>
-    <p class="page-lede">A visual look at selected software projects across commerce, education and consultancy. Each project card is a designed overview; follow the link to explore the live website.</p>
+    <p class="page-lede">Explore glimpses of the live websites behind selected projects across commerce, education and consultancy. Open any project to experience the full website.</p>
   </section>
-  <section class="wrap portfolio-grid">
-    {projects.map((project) => <article class="portfolio-card">
-      <a class:list={["portfolio-visual", project.visual]} href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.name} website`}>
-        <span class="portfolio-window-bar"><i></i><i></i><i></i><span>PROJECT / {project.n}</span></span>
-        <span class="portfolio-art">
-          <span class="portfolio-art-kicker">{project.visualSub}</span>
-          <span class="portfolio-art-title">{project.visualLabel}</span>
-          <span class="portfolio-art-bottom"><span>{project.visualAccent}</span><b aria-hidden="true">↗</b></span>
-          <span class="portfolio-art-shape" aria-hidden="true"></span>
-        </span>
+  <section class="wrap live-portfolio-grid">
+    {projects.map((project) => <article class="live-portfolio-card">
+      <a class="site-glimpse portfolio-glimpse" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.name} live website`}>
+        <span class="glimpse-browser-bar"><span class="glimpse-browser-dots"><i></i><i></i><i></i></span><span>{project.name}</span><b aria-hidden="true">↗</b></span>
+        <iframe src={project.url} title={`${project.name} live website preview`} loading="lazy" tabindex="-1" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <span class="glimpse-open-label">Open live website <b aria-hidden="true">↗</b></span>
       </a>
-      <div class="portfolio-card-info">
-        <div><span class="eyebrow">{project.type}</span><h2>{project.name}</h2><p>{project.detail}</p></div>
-        <a class="project-link" href={project.url} target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span></a>
+      <div class="live-portfolio-info">
+        <span class="eyebrow">{project.n} / {project.type}</span>
+        <div class="live-portfolio-title"><div><h2>{project.name}</h2><p>{project.detail}</p></div><a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website`}>↗</a></div>
       </div>
     </article>)}
   </section>
+  <p class="wrap glimpse-note">Website previews load from the original client websites. Some sites may restrict embedded viewing; the direct links remain available to open each website separately.</p>
   <section class="section wrap service-end"><p class="eyebrow">Have a project to discuss?</p><h2>Let’s work on<br /><span class="text-blue">what’s next.</span></h2><a class="button" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></section>
 </SiteLayout>

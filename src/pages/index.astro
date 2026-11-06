@@ -205,5 +205,23 @@ const faqs = [
         words.forEach((word) => observer.observe(word));
       }
     }
+
+    const revealTargets = document.querySelectorAll(
+      ".home-section-heading, .home-service-card, .process-grid article, .live-work-card, .independent-product, .faq-item, .final-cta-inner"
+    );
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            sectionObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+      revealTargets.forEach((target) => {
+        target.classList.add("js-reveal");
+        sectionObserver.observe(target);
+      });
+    }
   </script>
 </SiteLayout>

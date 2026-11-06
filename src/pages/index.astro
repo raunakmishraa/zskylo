@@ -136,7 +136,7 @@ const faqs = [
         {projects.map((project) => <article class="live-work-card">
           <a class="live-preview" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.name} live website`}>
             <div class="live-preview-chrome"><span></span><span></span><span></span><small>{project.name}</small><b aria-hidden="true">↗</b></div>
-            <iframe src={project.url} title={`${project.name} live website preview`} loading="lazy" tabindex="-1" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            {project.name === "Skinociti" ? <img class="skinociti-home-static-preview" src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://www.skinociti.com/" alt="Static screenshot preview of the Skinociti website" loading="lazy" /> : <iframe src={project.url} title={`${project.name} live website preview`} loading="lazy" tabindex="-1" referrerpolicy="strict-origin-when-cross-origin"></iframe>}
             <span class="preview-overlay">Open live website <b aria-hidden="true">↗</b></span>
           </a>
           <div class="live-work-meta"><span>{project.number} / {project.type}</span><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name} <span aria-hidden="true">↗</span></a><p>{project.detail}</p></div>

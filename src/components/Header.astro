@@ -1,6 +1,5 @@
 ---
 const links = [
-  { href: "/", label: "Home" },
   { href: "/services/", label: "Services" },
   { href: "/work/", label: "Work" },
   { href: "/products/", label: "Products" },
@@ -11,9 +10,39 @@ const path = Astro.url.pathname;
 <header class="site-header">
   <div class="header-inner wrap">
     <a class="wordmark" href="/" aria-label="Zskylo home"><img class="brand-logo" src="/logo.svg" alt="" width="42" height="42" /><span>zskylo</span></a>
-    <nav aria-label="Main navigation">
+    <nav class="desktop-nav" aria-label="Main navigation">
       {links.map((link) => <a class:list={["nav-link", { active: path === link.href }]} href={link.href}>{link.label}</a>)}
     </nav>
-    <a class="button button-small header-cta" href="/contact/">Let’s talk <span aria-hidden="true">↗</span></a>
+    <a class="button button-small header-cta" href="/contact/">Start a Project <span aria-hidden="true">↗</span></a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span></button>
+  </div>
+  <div class="mobile-navigation" id="mobile-navigation" aria-hidden="true">
+    <div class="mobile-navigation-inner">
+      <p class="eyebrow">Navigate Zskylo</p>
+      <nav aria-label="Mobile navigation">
+        {links.map((link, index) => <a class:list={["mobile-nav-link", { active: path === link.href }]} href={link.href}><span>0{index + 1}</span>{link.label}<b aria-hidden="true">↗</b></a>)}
+      </nav>
+      <a class="button mobile-nav-cta" href="/contact/">Start a Project <span aria-hidden="true">↗</span></a>
+      <p class="mobile-nav-note">Software Development · Brand Growth · Nepal</p>
+    </div>
   </div>
 </header>
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const panel = document.querySelector("#mobile-navigation");
+  const closeMenu = () => {
+    toggle?.setAttribute("aria-expanded", "false");
+    toggle?.setAttribute("aria-label", "Open navigation menu");
+    panel?.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("menu-open");
+  };
+  toggle?.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Open navigation menu" : "Close navigation menu");
+    panel?.setAttribute("aria-hidden", String(isOpen));
+    document.body.classList.toggle("menu-open", !isOpen);
+  });
+  panel?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
+</script>

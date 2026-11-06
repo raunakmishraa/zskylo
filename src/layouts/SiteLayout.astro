@@ -8,8 +8,8 @@ interface Props {
   description?: string;
 }
 const {
-  title = "Zskylo — Thoughtful digital work",
-  description = "Software development, brand growth, and useful digital products from Zskylo."
+  title = "Zskylo — Software Development & Brand Growth",
+  description = "Software development, brand growth and independent digital products from Zskylo, Nepal."
 } = Astro.props;
 ---
 <!doctype html>
@@ -19,8 +19,28 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f5f0" />
     <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zskylo" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zskylo",
+        "url": "https://zskylo.com/",
+        "description": "Software development, brand growth and independent digital products from Zskylo, Nepal.",
+        "email": "hello@zskylo.com",
+        "telephone": "+977 9761165180",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Imadol, Lalitpur",
+          "addressCountry": "NP"
+        }
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />

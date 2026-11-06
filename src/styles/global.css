@@ -775,3 +775,7 @@ nav { display: flex; gap: 34px; align-items: center; }
 
 /* Skinociti uses a static screenshot because its site does not permit iframe previews */
 .skinociti-static-preview { position: absolute; top: 31px; left: 0; display: block; width: 100%; height: calc(100% - 31px); object-fit: cover; object-position: top center; background: #fff; }
+
+
+/* Homepage Skinociti preview uses a static screenshot because the site blocks iframe embedding */
+.skinociti-home-static-preview { position: absolute; top: 29px; left: 0; display: block; width: 100%; height: calc(100% - 29px); object-fit: cover; object-position: top center; background: #fff; }

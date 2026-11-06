@@ -771,3 +771,7 @@ nav { display: flex; gap: 34px; align-items: center; }
 @media (prefers-reduced-motion: reduce) {
   .glimpse-open-label, .live-portfolio-title > a { transition: none; }
 }
+
+
+/* Skinociti uses a static screenshot because its site does not permit iframe previews */
+.skinociti-static-preview { position: absolute; top: 31px; left: 0; display: block; width: 100%; height: calc(100% - 31px); object-fit: cover; object-position: top center; background: #fff; }

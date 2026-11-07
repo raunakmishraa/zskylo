@@ -1127,3 +1127,40 @@ nav { display: flex; gap: 34px; align-items: center; }
     padding-bottom: 52px;
   }
 }
+
+/* PR #11: reserve exactly two headline lines and reveal them sequentially */
+.hero-typewriter {
+  display: block;
+}
+.hero-typewriter .typewriter-line {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 1.04em;
+  visibility: hidden;
+  border-right: 0;
+}
+.hero-typewriter .typewriter-line.is-active,
+.hero-typewriter .typewriter-line.is-complete {
+  visibility: visible;
+}
+.hero-typewriter .typewriter-line.is-active {
+  border-right: 2px solid var(--blue);
+  padding-right: .04em;
+  animation: typewriter-caret .85s steps(2, start) infinite;
+}
+.hero-typewriter.is-typed .typewriter-line {
+  border-right: 0;
+  padding-right: 0;
+  animation: none;
+}
+@keyframes typewriter-caret {
+  50% { border-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-typewriter .typewriter-line {
+    visibility: visible;
+    animation: none !important;
+    border-right: 0;
+  }
+}

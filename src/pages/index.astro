@@ -170,7 +170,7 @@ const faqs = [
     </div>
     <div class="faq-list">
       {faqs.map((faq, index) => <details class="faq-item">
-        <summary><span class="faq-index">{String(index + 1).padStart(2, "0")}</span><span>{faq.q}</span><span class="faq-toggle" aria-hidden="true">+</span></summary>
+        <summary><span class="faq-index">{String(index + 1).padStart(2, "0")}</span><span>{faq.q}</span><span class="faq-toggle" aria-hidden="true"><span class="faq-toggle-mark">+</span></span></summary>
         <div class="faq-answer"><p>{faq.a}</p></div>
       </details>)}
     </div>

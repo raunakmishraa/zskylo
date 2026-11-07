@@ -6,8 +6,8 @@ const services = [
     number: "01",
     id: "software",
     title: "Software Development",
-    statement: "Build the systems your business needs.",
-    description: "We connect applications, automate workflows and develop custom websites, platforms and business systems around the way your organisation works.",
+    statement: "Build tools around the way your business works.",
+    description: "From business websites and e-commerce platforms to CRM systems and integrations, we build digital tools around your requirements.",
     capabilities: ["Websites & web applications", "Custom business systems", "CRM & digital tools", "Workflow automation & integrations"],
     href: "/services/#software",
     link: "Explore software development",
@@ -17,8 +17,8 @@ const services = [
     number: "02",
     id: "growth",
     title: "Brand Growth",
-    statement: "Give your brand a clearer voice.",
-    description: "We bring strategy and creative execution together through content, video production and digital marketing that helps businesses communicate with purpose.",
+    statement: "Plan, produce and deliver your brand content.",
+    description: "We help businesses plan and produce content through social media marketing, digital campaigns, ad scripting, video editing and production.",
     capabilities: ["Social & digital marketing", "Video editing & production", "Ad scripting & creative direction", "Shooting & content delivery"],
     href: "/services/#growth",
     link: "Explore brand growth",
@@ -36,20 +36,20 @@ const projects = [
 ];
 
 const products = [
-  { name: "AashrayaCare", description: "Caregiver and care-home discovery platform.", url: "https://aashraya-care.netlify.app/", label: "Explore product", code: "AC" },
-  { name: "Yittzy", description: "A town event-listing platform.", url: "", label: "Coming soon", code: "YT" },
-  { name: "Cashify Wallet", description: "An independent fintech product.", url: "https://cashifywallet.com/", label: "Explore product", code: "CW" },
+  { name: "AashrayaCare", description: "Caregiver and care-home discovery platform.", url: "https://aashraya-care.netlify.app/", label: "Explore product" },
+  { name: "Yittzy", description: "A town event-listing platform.", url: "", label: "Coming soon" },
+  { name: "Cashify Wallet", description: "An independent fintech product.", url: "https://cashifywallet.com/", label: "Explore product" },
 ];
 
 const faqs = [
-  { q: "What does Zskylo do?", a: "Zskylo works with businesses across two service areas: Software Development and Brand Growth. We also develop independent digital products through separate product teams." },
-  { q: "What kind of software projects do you take on?", a: "Our software work includes websites, e-commerce platforms, web applications, CRM systems, workflow automation, integrations and custom business tools. The right scope depends on your requirements." },
-  { q: "What is included in Brand Growth?", a: "Depending on the brief, Brand Growth can include brand and content strategy, social media marketing, digital marketing, ad scripting, shooting, video editing and complete content delivery." },
-  { q: "How do I start a project?", a: "Share your requirements through our project enquiry form. Tell us what you are trying to achieve, and we will review the information and discuss the possible scope and next steps." },
-  { q: "Is there a fee for the initial discussion?", a: "There is no initial consultation fee. You can share your project requirements first, and we can discuss the approach and next steps." },
-  { q: "How much does a project cost?", a: "Costs depend on the work involved, its complexity and the agreed scope. We discuss pricing after understanding your requirements." },
-  { q: "How long will a project take?", a: "Timelines vary by project. We discuss a realistic schedule after reviewing the requirements and defining the scope." },
-  { q: "Are AashrayaCare, Yittzy and Cashify Wallet client services?", a: "No. They are independent product ventures developed separately from client service projects, with their own teams and websites." },
+  { q: "What does Zskylo do?", a: "Zskylo provides Software Development and Brand Growth services for businesses. We also build independent products that are managed separately from client work." },
+  { q: "What kind of software projects do you take on?", a: "We build business websites, e-commerce platforms, web applications, CRM systems, integrations, workflow automations and custom business tools." },
+  { q: "What is included in Brand Growth?", a: "Brand Growth can include social media and digital marketing, content strategy, ad scripting, shooting, video editing and content delivery." },
+  { q: "How do I start a project?", a: "Share your requirements through the project enquiry form. We’ll review the brief and discuss the scope and next steps with you." },
+  { q: "Is there a fee for the initial discussion?", a: "There is no initial consultation fee. We can first review your requirements and discuss the project before agreeing to any work." },
+  { q: "How much does a project cost?", a: "Pricing depends on the deliverables, complexity and agreed scope. We’ll discuss it after understanding what the project involves." },
+  { q: "How long will a project take?", a: "The timeline depends on the requirements and scope. We’ll discuss a realistic schedule after reviewing the brief." },
+  { q: "Are AashrayaCare, Yittzy and Cashify Wallet client services?", a: "No. They are standalone products managed separately from client services, each with its own team and website." },
 ];
 ---
 <SiteLayout title="Zskylo | Software Development & Brand Growth in Nepal" description="Zskylo helps businesses build custom software, connect applications, automate workflows and grow their brands through creative and digital marketing solutions.">
@@ -57,15 +57,15 @@ const faqs = [
     <div class="wrap home-hero-grid">
       <div class="home-hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span> Software Development · Brand Growth · Nepal</p>
-        <h1>Build better systems.<br /><span class="text-blue">Grow stronger brands.</span></h1>
-        <p class="home-hero-lede">We connect applications, automate workflows, build custom business systems and shape brand growth strategies for businesses ready to move forward.</p>
+        <h1 class="hero-typewriter" aria-label="Build better systems. Grow stronger brands."><span class="typewriter-line" data-typewriter-line="Build better systems.">Build better systems.</span><br /><span class="text-blue typewriter-line" data-typewriter-line="Grow stronger brands.">Grow stronger brands.</span><span class="typewriter-cursor" aria-hidden="true"></span></h1>
+        <p class="home-hero-lede">We help businesses build websites and custom systems, connect their tools, automate workflows and develop their brand through content and digital marketing.</p>
         <a class="button home-primary-cta" href="/contact/">Start a Project <span aria-hidden="true">↗</span></a>
-        <p class="hero-note">Share your requirements. We’ll discuss the right next step.</p>
+        <p class="hero-note">Share your requirements. We’ll discuss the scope and next steps.</p>
       </div>
       <div class="home-hero-art" role="img" aria-label="Abstract diagram showing connected business systems and creative channels">
         <div class="art-topline"><span>ZS / SYSTEMS + STORY</span><span>NEPAL · WORKING EVERYWHERE</span></div>
         <div class="art-grid-lines" aria-hidden="true"></div>
-        <div class="art-center"><span class="art-center-mark">Z</span><span>BUSINESS<br/>IN MOTION</span></div>
+        <div class="art-center"><img class="art-center-logo" src="/logo.svg" alt="" width="88" height="88" /><span>ZS / BUILT<br/>TO CONNECT</span></div>
         <div class="art-node art-node-one"><span class="art-node-symbol">↗</span><b>CONNECT</b><small>Applications</small></div>
         <div class="art-node art-node-two"><span class="art-node-symbol">⌘</span><b>BUILD</b><small>Systems</small></div>
         <div class="art-node art-node-three"><span class="art-node-symbol">✳</span><b>GROW</b><small>Brands</small></div>
@@ -79,14 +79,14 @@ const faqs = [
 
   <section class="home-services section wrap" id="services">
     <div class="home-section-heading">
-      <div><p class="eyebrow">What we do</p><h2>Two ways to move<br/><span class="text-blue">your business forward.</span></h2></div>
-      <p>Whether you need a better digital foundation or a stronger brand presence, start with the challenge you want to solve.</p>
+      <div><p class="eyebrow">What we do</p><h2>Software for how you work.<br/><span class="text-blue">Marketing for how you show up.</span></h2></div>
+      <p>We work with businesses that need better digital tools, stronger brand communication or both.</p>
     </div>
     <div class="home-service-grid">
       {services.map((service) => <article class="home-service-card">
         <div class:list={["service-card-art", service.visual]}>
           <span class="service-art-index">{service.number} / ZSKYLO</span>
-          {service.id === "software" ? <div class="system-art" aria-hidden="true"><span class="system-window system-window-a"><i></i><i></i><i></i><b>CRM / OVERVIEW</b><em></em><em></em></span><span class="system-window system-window-b"><i></i><i></i><i></i><b>WORKFLOW</b><em></em><em></em></span><span class="system-connector"></span><span class="system-dot"></span></div> : <div class="brand-art" aria-hidden="true"><span class="brand-art-word">MAKE<br/>IT <i>MATTER.</i></span><span class="brand-art-orbit"></span><span class="brand-art-tag">STRATEGY / CONTENT / REACH</span></div>}
+          {service.id === "software" ? <div class="service-art-message software-message" aria-hidden="true"><span>01 / SOFTWARE</span><strong>Systems<br/>that <i>connect.</i></strong><small>WEBSITES · PLATFORMS · AUTOMATION</small></div> : <div class="service-art-message growth-message" aria-hidden="true"><span>02 / BRAND GROWTH</span><strong>Stories<br/>that <i>move.</i></strong><small>STRATEGY · CONTENT · CAMPAIGNS</small></div>}
           <span class="service-art-caption">{service.id === "software" ? "CONNECTED BY DESIGN" : "BUILT TO COMMUNICATE"}</span>
         </div>
         <div class="service-card-content">
@@ -108,20 +108,20 @@ const faqs = [
         <span class="tagline-line"><span class="tagline-word">Careful</span> <span class="tagline-word">Engineering.</span></span>
         <span class="tagline-line"><span class="tagline-word">Useful</span> <span class="tagline-word">Handover.</span></span>
       </p>
-      <p class="tagline-support">A practical principle for every engagement: understand the need, do the work with care, and leave you with something useful.</p>
+      <p class="tagline-support">Understand the requirements. Build with care. Hand over work your team can use.</p>
     </div>
   </section>
 
   <section class="process-section section">
     <div class="wrap">
       <div class="home-section-heading">
-        <div><p class="eyebrow">A clear way forward</p><h2>From requirements<br/>to a considered plan.</h2></div>
-        <p>Good work starts with understanding what needs to change. We keep the first steps straightforward.</p>
+        <div><p class="eyebrow">A clear way forward</p><h2>How a project<br/>gets started.</h2></div>
+        <p>Tell us what you need. We’ll review the requirements and discuss the scope before agreeing on the next steps.</p>
       </div>
       <div class="process-grid">
-        <article><span class="process-number">01</span><h3>Share the requirements</h3><p>Tell us about your business, what you need and the outcome you are working towards.</p></article>
-        <article><span class="process-number">02</span><h3>Define the approach</h3><p>We review the brief, clarify the scope and discuss a suitable direction.</p></article>
-        <article><span class="process-number">03</span><h3>Move forward</h3><p>Once the scope is understood, we agree on the next steps for the project.</p></article>
+        <article><span class="process-number">01</span><h3>Send your requirements</h3><p>Tell us what you need, who it is for and what you want the work to achieve.</p></article>
+        <article><span class="process-number">02</span><h3>Discuss the scope</h3><p>We review the brief, clarify what is involved and talk through a suitable approach.</p></article>
+        <article><span class="process-number">03</span><h3>Agree on next steps</h3><p>When the requirements and scope are clear, we agree on how to proceed.</p></article>
       </div>
     </div>
   </section>
@@ -129,8 +129,8 @@ const faqs = [
   <section class="home-work-section section">
     <div class="wrap">
       <div class="home-section-heading">
-        <div><p class="eyebrow">Selected software work</p><h2>Built for different<br/><span class="text-blue">business needs.</span></h2></div>
-        <div class="work-heading-side"><p>Explore a selection of websites and platforms developed across commerce, education and consultancy.</p><a class="text-link" href="/work/">View all projects <span aria-hidden="true">→</span></a></div>
+        <div><p class="eyebrow">Selected software work</p><h2>Websites and platforms<br/><span class="text-blue">we’ve delivered.</span></h2></div>
+        <div class="work-heading-side"><p>A selection of client projects across e-commerce, education and consultancy.</p><a class="text-link" href="/work/">View all projects <span aria-hidden="true">→</span></a></div>
       </div>
       <div class="live-work-grid">
         {projects.map((project) => <article class="live-work-card">
@@ -149,12 +149,12 @@ const faqs = [
   <section class="products-section section">
     <div class="wrap">
       <div class="products-heading">
-        <div><p class="eyebrow eyebrow-light">Beyond client projects</p><h2>Independent ideas.<br/><span>Distinct purposes.</span></h2></div>
-        <p>Zskylo also develops its own products. Each venture is handled separately, with its own team and website, independent from our client service work.</p>
+        <div><p class="eyebrow eyebrow-light">Beyond client projects</p><h2>Our products,<br/><span>built independently.</span></h2></div>
+        <p>Alongside client work, we build standalone products. Each has its own team and website.</p>
       </div>
       <div class="independent-products">
         {products.map((product) => <article class="independent-product">
-          <span class="product-monogram" aria-hidden="true">{product.code}</span>
+          
           <div><h3>{product.name}</h3><p>{product.description}</p></div>
           {product.url ? <a href={product.url} target="_blank" rel="noopener noreferrer">{product.label} <span aria-hidden="true">↗</span></a> : <span class="product-coming">{product.label}</span>}
         </article>)}
@@ -166,7 +166,7 @@ const faqs = [
   <section class="faq-section section wrap">
     <div class="home-section-heading">
       <div><p class="eyebrow">A few useful answers</p><h2>Before you<br/><span class="text-blue">get started.</span></h2></div>
-      <p>Have a question that is not covered here? Share your requirements and we can discuss it directly.</p>
+      <p>If your question is not covered here, send us a note and we’ll discuss it.</p>
     </div>
     <div class="faq-list">
       {faqs.map((faq, index) => <details class="faq-item">
@@ -179,49 +179,42 @@ const faqs = [
   <section class="final-cta">
     <div class="wrap final-cta-inner">
       <p class="eyebrow eyebrow-light">Have something in mind?</p>
-      <h2>Tell us what you’re<br/><span>looking to build or grow.</span></h2>
-      <p>Share your project requirements. We’ll review them and discuss a practical next step.</p>
+      <h2>Have a project<br/><span>in mind?</span></h2>
+      <p>Send us your requirements. We’ll review the brief and talk through the scope with you.</p>
       <a class="button button-light" href="/contact/">Start a Project <span aria-hidden="true">↗</span></a>
       <span class="final-cta-note">NO INITIAL CONSULTATION FEE</span>
     </div>
   </section>
 
   <script>
-    const reveal = document.querySelector("[data-tagline-reveal]");
-    const words = reveal?.querySelectorAll(".tagline-word");
+    const heading = document.querySelector(".hero-typewriter");
+    const typewriterLines = heading?.querySelectorAll<HTMLSpanElement>("[data-typewriter-line]");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (words?.length) {
-      if (reduceMotion || !("IntersectionObserver" in window)) {
-        words.forEach((word) => word.classList.add("is-active"));
-      } else {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-active");
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { rootMargin: "-43% 0px -43% 0px", threshold: 0 });
-        words.forEach((word) => observer.observe(word));
-      }
-    }
 
-    const revealTargets = document.querySelectorAll(
-      ".home-section-heading, .home-service-card, .process-grid article, .live-work-card, .independent-product, .faq-item, .final-cta-inner"
-    );
-    if (!reduceMotion && "IntersectionObserver" in window) {
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            sectionObserver.unobserve(entry.target);
-          }
+    if (typewriterLines?.length) {
+      if (reduceMotion) {
+        typewriterLines.forEach((line) => {
+          line.textContent = line.dataset.typewriterLine || "";
         });
-      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
-      revealTargets.forEach((target) => {
-        target.classList.add("js-reveal");
-        sectionObserver.observe(target);
-      });
+        heading?.classList.add("is-typed");
+      } else {
+        const lines = Array.from(typewriterLines);
+        const typeLine = (lineIndex: number, characterIndex = 0) => {
+          const line = lines[lineIndex];
+          if (!line) {
+            heading?.classList.add("is-typed");
+            return;
+          }
+          const fullText = line.dataset.typewriterLine || "";
+          line.textContent = fullText.slice(0, characterIndex);
+          if (characterIndex < fullText.length) {
+            window.setTimeout(() => typeLine(lineIndex, characterIndex + 1), 42);
+          } else {
+            window.setTimeout(() => typeLine(lineIndex + 1), 180);
+          }
+        };
+        typeLine(0);
+      }
     }
   </script>
 </SiteLayout>

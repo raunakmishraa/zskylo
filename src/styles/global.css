@@ -571,8 +571,9 @@ nav { display: flex; gap: 34px; align-items: center; }
 .faq-item summary { display: grid; grid-template-columns: 48px 1fr 24px; align-items: center; gap: 12px; min-height: 76px; cursor: pointer; color: var(--navy-deep); font-size: 14px; font-weight: 700; list-style: none; }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-index { color: #8791a0; font-size: 9px; font-weight: 800; letter-spacing: .1em; }
-.faq-toggle { display: grid; width: 23px; height: 23px; place-items: center; border: 1px solid var(--line); color: var(--blue); font-size: 17px; font-weight: 400; transition: transform .3s ease; }
-.faq-item[open] .faq-toggle { transform: rotate(45deg); }
+.faq-toggle { display: flex; width: 23px; height: 23px; flex: 0 0 23px; align-items: center; justify-content: center; padding: 0; border: 1px solid var(--line); color: var(--blue); font-size: 17px; font-weight: 400; line-height: 1; }
+.faq-toggle-mark { display: block; line-height: 1; transform: translateY(-.5px); transition: transform .3s ease; }
+.faq-item[open] .faq-toggle-mark { transform: translateY(-.5px) rotate(45deg); }
 .faq-answer { padding: 0 55px 22px 60px; }
 .faq-answer p { max-width: 650px; margin: 0; font-size: 12px; line-height: 1.9; }
 

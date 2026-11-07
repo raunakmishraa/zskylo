@@ -188,7 +188,7 @@ const faqs = [
 
   <script>
     const heading = document.querySelector(".hero-typewriter");
-    const typewriterLines = heading?.querySelectorAll("[data-typewriter-line]");
+    const typewriterLines = heading?.querySelectorAll<HTMLSpanElement>("[data-typewriter-line]");
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (typewriterLines?.length) {
@@ -199,7 +199,7 @@ const faqs = [
         heading?.classList.add("is-typed");
       } else {
         const lines = Array.from(typewriterLines);
-        const typeLine = (lineIndex, characterIndex = 0) => {
+        const typeLine = (lineIndex: number, characterIndex = 0) => {
           const line = lines[lineIndex];
           if (!line) {
             heading?.classList.add("is-typed");

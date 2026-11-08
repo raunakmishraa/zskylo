@@ -8,12 +8,12 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     <p class="page-lede">Share your requirements and a little context about your business. We’ll review your brief and discuss the right next step. There is no initial consultation fee.</p>
   </section>
   <section class="wrap inquiry-layout">
-    <form class="project-inquiry" id="project-inquiry">
-      <div class="inquiry-intro"><span class="eyebrow">01 / Your details</span><p>Start with the basics so we know how to reach you.</p></div>
+    <form class="project-inquiry" id="project-inquiry" aria-labelledby="inquiry-form-title" aria-describedby="inquiry-form-help">
+      <div class="inquiry-intro"><span class="eyebrow">01 / Your details</span><h2 id="inquiry-form-title">A few details to get started.</h2><p id="inquiry-form-help">Complete the fields below. Selecting Prepare Project Enquiry opens your email app with the details filled in; you must send that email to submit your enquiry.</p></div>
       <div class="inquiry-fields">
-        <label>Your name <input name="name" autocomplete="name" required placeholder="Name" /></label>
-        <label>Business or organisation <input name="business" autocomplete="organization" placeholder="Business name" /></label>
-        <label>Email address <input type="email" name="email" autocomplete="email" required placeholder="you@company.com" /></label>
+        <label>Your name <input name="name" autocomplete="name" maxlength="120" required placeholder="Name" /></label>
+        <label>Business or organisation <input name="business" autocomplete="organization" maxlength="160" placeholder="Business name" /></label>
+        <label>Email address <input type="email" name="email" autocomplete="email" maxlength="254" required placeholder="you@company.com" /></label>
         <label>What do you need?
           <select name="service" required>
             <option value="">Select a service</option>
@@ -23,7 +23,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
           </select>
         </label>
         <label class="inquiry-full">Project requirements <textarea name="requirements" rows="6" required placeholder="Tell us what you are trying to achieve, what you need, and any useful context."></textarea></label>
-        <label class="inquiry-full">Website or reference link <input type="url" name="reference" placeholder="https://" /></label>
+        <label class="inquiry-full">Website or reference link <input type="url" name="reference" autocomplete="url" placeholder="https://" /></label>
       </div>
       <div class="inquiry-submit-row"><button class="button" type="submit">Prepare Project Enquiry <span aria-hidden="true">↗</span></button><p>Your email app will open with your enquiry ready to send. Nothing is submitted to a third-party form service.</p></div>
       <p class="inquiry-status" id="inquiry-status" role="status" aria-live="polite"></p>
@@ -51,7 +51,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       const body = fields.map(([label, value]) => label + ":\n" + value).join("\n\n");
       const subject = encodeURIComponent("Project enquiry — " + data.get("service"));
       window.location.href = "mailto:hello@zskylo.com?subject=" + subject + "&body=" + encodeURIComponent(body);
-      if (status) status.textContent = "Your email app should open with the enquiry details. Please review and send the email to complete your enquiry.";
+      if (status) status.textContent = "Your email app should open with the enquiry details. Review and send the email to submit it. If it does not open, email us directly at hello@zskylo.com.";
     });
   </script>
 </SiteLayout>

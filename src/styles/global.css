@@ -1204,3 +1204,20 @@ nav { display: flex; gap: 34px; align-items: center; }
   .about-principle h2, .about-principle-inner > p:last-child { grid-column: 1; }
   .about-contact-cta { align-items: flex-start; flex-direction: column; padding-bottom: 75px; }
 }
+
+/* Final narrow-screen and keyboard-navigation QA adjustments */
+@media (max-width: 480px) {
+  .mobile-navigation nav,
+  .footer-bottom nav {
+    overflow: visible;
+  }
+  .page-hero h1 {
+    max-width: 100%;
+    font-size: clamp(38px, 11vw, 52px);
+    overflow-wrap: anywhere;
+  }
+  .service-meta {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}

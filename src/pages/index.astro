@@ -57,7 +57,7 @@ const faqs = [
     <div class="wrap home-hero-grid">
       <div class="home-hero-copy">
         <p class="eyebrow"><span class="eyebrow-line"></span> Software Development · Brand Growth · Nepal</p>
-        <h1 class="hero-typewriter is-pending" aria-label="Build better systems. Grow stronger brands."><span class="typewriter-line" data-typewriter-line="Build better systems.">Build better systems.</span><span class="text-blue typewriter-line" data-typewriter-line="Grow stronger brands.">Grow stronger brands.</span></h1>
+        <h1 class="hero-typewriter">Build better systems.<br/><span class="text-blue">Grow stronger brands.</span></h1>
         <p class="home-hero-lede">We help businesses build websites and custom systems, connect their tools, automate workflows and develop their brand through content and digital marketing.</p>
         <a class="button home-primary-cta" href="/contact/">Start a Project <span aria-hidden="true">↗</span></a>
         <p class="hero-note" style="margin-bottom: 18px;">Share your requirements. We’ll discuss the scope and next steps.</p>
@@ -186,58 +186,5 @@ const faqs = [
     </div>
   </section>
 
-  <script>
-    const heading = document.querySelector<HTMLElement>(".hero-typewriter");
-    const typewriterLines = heading?.querySelectorAll<HTMLSpanElement>("[data-typewriter-line]");
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (heading && typewriterLines?.length) {
-      const lines = Array.from(typewriterLines);
-      const fullTexts = lines.map((line) => line.dataset.typewriterLine || "");
-
-      if (reduceMotion) {
-        lines.forEach((line, index) => {
-          line.textContent = fullTexts[index];
-          line.classList.add("is-complete");
-        });
-        heading.classList.remove("is-pending");
-        heading.classList.add("is-typed");
-      } else {
-        // Clear the server-rendered text before revealing the heading, preventing a full-text flash.
-        lines.forEach((line) => {
-          line.textContent = "";
-        });
-        heading.classList.remove("is-pending");
-
-        const typeLine = (lineIndex: number, characterIndex = 0) => {
-          const line = lines[lineIndex];
-          const fullText = fullTexts[lineIndex];
-
-          if (!line || fullText === undefined) {
-            heading.classList.add("is-typed");
-            return;
-          }
-
-          line.classList.add("is-active");
-          line.textContent = fullText.slice(0, characterIndex);
-
-          if (characterIndex < fullText.length) {
-            window.setTimeout(() => typeLine(lineIndex, characterIndex + 1), 42);
-            return;
-          }
-
-          line.classList.remove("is-active");
-          line.classList.add("is-complete");
-
-          if (lineIndex + 1 < lines.length) {
-            window.setTimeout(() => typeLine(lineIndex + 1), 180);
-          } else {
-            heading.classList.add("is-typed");
-          }
-        };
-
-        typeLine(0);
-      }
-    }
-  </script>
 </SiteLayout>

@@ -15,19 +15,19 @@ const projects = [
     <h1>Different briefs.<br /><span class="text-blue">Purposeful builds.</span></h1>
     <p class="page-lede">Explore glimpses of the live websites behind selected projects across commerce, education and consultancy. Open any project to experience the full website.</p>
   </section>
-  <section class="wrap live-portfolio-grid">
-    {projects.map((project) => <article class="live-portfolio-card">
+  <section class="wrap live-portfolio-grid" aria-label="Selected software development projects" aria-describedby="portfolio-preview-note">
+    {projects.map((project) => <article class="live-portfolio-card" aria-labelledby={`project-title-${project.n}`}>
       <a class="site-glimpse portfolio-glimpse" href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.name} live website`}>
-        <span class="glimpse-browser-bar"><span class="glimpse-browser-dots"><i></i><i></i><i></i></span><span>{project.name}</span><b aria-hidden="true">↗</b></span>
+        <span class="glimpse-browser-bar"><span class="glimpse-browser-dots"><i></i><i></i><i></i></span><span>{project.name}</span><span class="glimpse-preview-type">Website preview</span><b aria-hidden="true">↗</b></span>
         {project.name === "Skinociti" ? <img class="skinociti-static-preview" src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://www.skinociti.com/" alt="Static screenshot preview of the Skinociti website" loading="lazy" /> : <iframe src={project.url} title={`${project.name} live website preview`} loading="lazy" tabindex="-1" referrerpolicy="strict-origin-when-cross-origin"></iframe>}
         <span class="glimpse-open-label">Open live website <b aria-hidden="true">↗</b></span>
       </a>
       <div class="live-portfolio-info">
         <span class="eyebrow">{project.n} / {project.type}</span>
-        <div class="live-portfolio-title"><div><h2>{project.name}</h2><p>{project.detail}</p></div><a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website`}>↗</a></div>
+        <div class="live-portfolio-title"><div><h2 id={`project-title-${project.n}`}>{project.name}</h2><p>{project.detail}</p></div><a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.name} website`}>↗</a></div>
       </div>
     </article>)}
   </section>
-  <p class="wrap glimpse-note">Website previews load from the original client websites. Some sites may restrict embedded viewing; the direct links remain available to open each website separately.</p>
+  <p class="wrap glimpse-note" id="portfolio-preview-note">Previews are loaded from the original websites. Some site owners restrict embedded viewing, so a preview may appear blank or incomplete. Use the project link to open the full website in a new tab.</p>
   <section class="section wrap service-end"><p class="eyebrow">Have a project to discuss?</p><h2>Let’s work on<br /><span class="text-blue">what’s next.</span></h2><a class="button" href="/contact/">Get in touch <span aria-hidden="true">↗</span></a></section>
 </SiteLayout>

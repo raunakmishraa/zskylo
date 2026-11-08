@@ -1219,3 +1219,13 @@ nav { display: flex; gap: 34px; align-items: center; }
   .service-index a, .service-index a + a { padding: 15px 4px; border-left: 0; }
   .service-index a + a { border-top: 1px solid var(--line); }
 }
+
+/* Work page: clarify live-preview framing */
+.glimpse-preview-type { margin-left: auto; color: #778195; font-size: 7px; font-weight: 700; letter-spacing: .04em; }
+.glimpse-browser-bar > b { margin-left: 0; }
+.live-portfolio-card { min-width: 0; }
+.live-portfolio-info h2 { scroll-margin-top: 24px; }
+.glimpse-note { max-width: 1160px; padding-left: 1px; }
+@media (max-width: 560px) {
+  .glimpse-preview-type { display: none; }
+}

@@ -15,6 +15,7 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
+    <script is:inline>document.documentElement.classList.add("js");</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f7f5f0" />
@@ -50,5 +51,72 @@ const {
     <Header />
     <main id="main"><slot /></main>
     <Footer />
+    <script is:inline>
+      (() => {
+        const headings = document.querySelectorAll("main .home-hero h1, main .page-hero h1");
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        headings.forEach((heading) => {
+          const originalText = heading.textContent || "";
+          heading.setAttribute("aria-label", originalText.replace(/\\s+/g, " ").trim());
+
+          if (reducedMotion) {
+            heading.classList.add("is-ready");
+            return;
+          }
+
+          const reservedHeight = heading.getBoundingClientRect().height;
+          heading.style.minHeight = reservedHeight + "px";
+
+          const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
+          const textNodes = [];
+          while (walker.nextNode()) {
+            if (walker.currentNode.nodeValue) textNodes.push(walker.currentNode);
+          }
+
+          const segments = textNodes.map((node) => {
+            const segment = document.createElement("span");
+            segment.className = "typewriter-segment";
+            segment.dataset.fullText = node.nodeValue || "";
+            node.parentNode.replaceChild(segment, node);
+            return segment;
+          });
+
+          let segmentIndex = 0;
+          let characterIndex = 0;
+          heading.classList.add("is-typing");
+
+          const typeNext = () => {
+            const segment = segments[segmentIndex];
+            if (!segment) {
+              heading.classList.remove("is-typing");
+              heading.classList.add("is-ready");
+              heading.style.minHeight = "";
+              return;
+            }
+
+            const fullText = segment.dataset.fullText || "";
+            if (characterIndex === 0) segment.classList.add("is-active");
+            segment.textContent = fullText.slice(0, characterIndex + 1);
+            characterIndex += 1;
+
+            if (characterIndex < fullText.length) {
+              window.setTimeout(typeNext, 34);
+            } else {
+              segment.classList.remove("is-active");
+              segmentIndex += 1;
+              characterIndex = 0;
+              window.setTimeout(typeNext, 35);
+            }
+          };
+
+          if (segments.length) typeNext();
+          else {
+            heading.classList.add("is-ready");
+            heading.style.minHeight = "";
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

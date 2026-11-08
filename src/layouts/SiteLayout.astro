@@ -53,12 +53,13 @@ const {
     <Footer />
     <script is:inline>
       (() => {
+        try {
         const headings = document.querySelectorAll("main .home-hero h1, main .page-hero h1");
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         headings.forEach((heading) => {
           const originalText = heading.textContent || "";
-          heading.setAttribute("aria-label", originalText.replace(/\\s+/g, " ").trim());
+          heading.setAttribute("aria-label", originalText.replace(/\s+/g, " ").trim());
 
           if (reducedMotion) {
             heading.classList.add("is-ready");
@@ -116,6 +117,17 @@ const {
             heading.style.minHeight = "";
           }
         });
+        } catch (error) {
+          document.querySelectorAll(".typewriter-segment").forEach((segment) => {
+            segment.textContent = segment.dataset.fullText || "";
+            segment.classList.remove("is-active");
+          });
+          document.querySelectorAll(".hero-typewriter").forEach((heading) => {
+            heading.classList.add("is-ready");
+            heading.style.minHeight = "";
+          });
+          document.documentElement.classList.remove("js");
+        }
       })();
     </script>
   </body>

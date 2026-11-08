@@ -1298,25 +1298,25 @@ button {
 }
 
 
-/* Shared page-hero typewriter: preserve layout, inline styling and reduced-motion access */
-.js .hero-typewriter:not(.is-ready) {
+/* Inner-page typewriter: reveal immediately as characters are written */
+.js .page-hero h1:not(.is-ready) {
   visibility: hidden;
 }
-.hero-typewriter.is-typing,
-.hero-typewriter.is-ready {
+.js .page-hero h1.is-typing:not(.is-ready),
+.js .page-hero h1.is-ready {
   visibility: visible;
 }
-.typewriter-segment.is-active {
+.page-hero .typewriter-segment.is-active {
   border-right: 2px solid var(--blue);
   padding-right: .035em;
-  animation: shared-typewriter-caret .8s steps(2, start) infinite;
+  animation: inner-page-typewriter-caret .8s steps(2, start) infinite;
 }
-@keyframes shared-typewriter-caret {
+@keyframes inner-page-typewriter-caret {
   50% { border-color: transparent; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .js .hero-typewriter,
-  .typewriter-segment {
+  .js .page-hero h1,
+  .page-hero .typewriter-segment {
     visibility: visible !important;
     animation: none !important;
     border-right: 0 !important;

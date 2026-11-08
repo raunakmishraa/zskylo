@@ -1279,3 +1279,20 @@ button, input, select, textarea {
 button {
   color: inherit;
 }
+
+/* Final narrow-screen and keyboard-navigation QA adjustments */
+@media (max-width: 480px) {
+  .mobile-navigation nav,
+  .footer-bottom nav {
+    overflow: visible;
+  }
+  .page-hero h1 {
+    max-width: 100%;
+    font-size: clamp(38px, 11vw, 52px);
+    overflow-wrap: anywhere;
+  }
+  .service-meta {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+}

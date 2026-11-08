@@ -54,7 +54,7 @@ const {
     <script is:inline>
       (() => {
         try {
-        const headings = document.querySelectorAll("main .home-hero h1, main .page-hero h1");
+        const headings = document.querySelectorAll("main .page-hero h1");
         const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         headings.forEach((heading) => {
@@ -122,7 +122,7 @@ const {
             segment.textContent = segment.dataset.fullText || "";
             segment.classList.remove("is-active");
           });
-          document.querySelectorAll(".hero-typewriter").forEach((heading) => {
+          document.querySelectorAll("main .page-hero h1").forEach((heading) => {
             heading.classList.add("is-ready");
             heading.style.minHeight = "";
           });

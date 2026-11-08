@@ -1231,6 +1231,19 @@ nav { display: flex; gap: 34px; align-items: center; }
 }
 
 
+/* Products page: clear live and upcoming product states */
+.product-showcase-card { display: flex; flex-direction: column; }
+.product-showcase-info { display: flex; flex: 1; flex-direction: column; align-items: flex-start; }
+.product-showcase-info > p { flex: 1; }
+.product-showcase-info .text-link,
+.product-showcase-info .coming-label { margin-top: 2px; }
+.product-preview-note { margin-top: -45px; margin-bottom: 35px; color: #778195; font-size: 10px; line-height: 1.75; }
+.product-glimpse:focus-visible .glimpse-open-label { opacity: 1; transform: translateY(0); }
+@media (max-width: 560px) {
+  .product-preview-note { margin-top: -28px; margin-bottom: 25px; }
+}
+
+
 /* Contact page: make the enquiry form's next step explicit */
 .inquiry-intro h2 { margin: 12px 0 7px; color: var(--navy-deep); font-size: clamp(24px,3vw,32px); line-height: 1.15; letter-spacing: -.05em; }
 .inquiry-intro p { max-width: 590px; line-height: 1.8; }
